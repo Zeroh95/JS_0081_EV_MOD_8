@@ -42,6 +42,8 @@ Servidor en: `http://localhost:3000`
 
 ### 1. Registrar usuario
 
+| Campo | Valor |
+|-------|-------|
 | **Método** | POST |
 | **URL** | `http://localhost:3000/api/users/register` |
 | **Header** | `Content-Type: application/json` |
@@ -57,6 +59,8 @@ Servidor en: `http://localhost:3000`
 
 ### 2. Login
 
+| Campo | Valor |
+|-------|-------|
 | **Método** | POST |
 | **URL** | `http://localhost:3000/api/users/login` |
 | **Header** | `Content-Type: application/json` |
@@ -73,17 +77,23 @@ Servidor en: `http://localhost:3000`
 
 ### 3. Obtener perfil
 
+| Campo | Valor |
+|-------|-------|
 | **Método** | GET |
 | **URL** | `http://localhost:3000/api/users/profile` |
 | **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
 
 ### 4. Listar usuarios
 
+| Campo | Valor |
+|-------|-------|
 | **Método** | GET |
 | **URL** | `http://localhost:3000/api/users` |
 
 ### 5. Subir archivo
 
+| Campo | Valor |
+|-------|-------|
 | **Método** | POST |
 | **URL** | `http://localhost:3000/api/files/upload` |
 | **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
@@ -91,18 +101,24 @@ Servidor en: `http://localhost:3000`
 
 ### 6. Listar mis archivos
 
+| Campo | Valor |
+|-------|-------|
 | **Método** | GET |
 | **URL** | `http://localhost:3000/api/files` |
 | **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
 
 ### 7. Descargar archivo
 
+| Campo | Valor |
+|-------|-------|
 | **Método** | GET |
 | **URL** | `http://localhost:3000/api/files/download/1` |
 | **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
 
 ### 8. Eliminar archivo
 
+| Campo | Valor |
+|-------|-------|
 | **Método** | DELETE |
 | **URL** | `http://localhost:3000/api/files/1` |
 | **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
