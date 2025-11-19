@@ -38,28 +38,75 @@ Servidor en: `http://localhost:3000`
 - `GET /api/files/download/:fileId` - Descargar archivo
 - `DELETE /api/files/:fileId` - Eliminar archivo
 
-## Pruebas rápidas
+## Pruebas con Postman
 
-### 1. Registrar
-```bash
-curl -X POST http://localhost:3000/api/users/register \
-  -H "Content-Type: application/json" \
-  -d '{"name":"Juan","email":"juan@example.com","password":"123456"}'
+### 1. Registrar usuario
+
+| **Método** | POST |
+| **URL** | `http://localhost:3000/api/users/register` |
+| **Header** | `Content-Type: application/json` |
+
+**Body (raw JSON):**
+```json
+{
+  "name": "Juan Pérez",
+  "email": "juan@example.com",
+  "password": "password123"
+}
 ```
 
 ### 2. Login
-```bash
-curl -X POST http://localhost:3000/api/users/login \
-  -H "Content-Type: application/json" \
-  -d '{"email":"juan@example.com","password":"123456"}'
+
+| **Método** | POST |
+| **URL** | `http://localhost:3000/api/users/login` |
+| **Header** | `Content-Type: application/json` |
+
+**Body (raw JSON):**
+```json
+{
+  "email": "juan@example.com",
+  "password": "password123"
+}
 ```
 
-### 3. Subir archivo
-```bash
-curl -X POST http://localhost:3000/api/files/upload \
-  -H "Authorization: Bearer TOKEN" \
-  -F "file=@/ruta/al/archivo.pdf"
-```
+**Copia el token de la respuesta para las siguientes pruebas**
+
+### 3. Obtener perfil
+
+| **Método** | GET |
+| **URL** | `http://localhost:3000/api/users/profile` |
+| **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
+
+### 4. Listar usuarios
+
+| **Método** | GET |
+| **URL** | `http://localhost:3000/api/users` |
+
+### 5. Subir archivo
+
+| **Método** | POST |
+| **URL** | `http://localhost:3000/api/files/upload` |
+| **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
+| **Body** | form-data → Key: `file` (tipo: File) |
+
+### 6. Listar mis archivos
+
+| **Método** | GET |
+| **URL** | `http://localhost:3000/api/files` |
+| **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
+
+### 7. Descargar archivo
+
+| **Método** | GET |
+| **URL** | `http://localhost:3000/api/files/download/1` |
+| **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
+
+### 8. Eliminar archivo
+
+| **Método** | DELETE |
+| **URL** | `http://localhost:3000/api/files/1` |
+| **Header** | `Authorization: Bearer <TU_TOKEN_AQUI>` |
+
 
 ## Estructura
 
